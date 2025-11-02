@@ -15,7 +15,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/pa/main-view.fxml"));
+        java.net.URL fxmlResource = getClass().getResource("/com/pa/main-view.fxml");
+        if (fxmlResource == null) {
+            throw new IOException("Cannot find FXML resource: /com/pa/main-view.fxml");
+        }
+        
+        FXMLLoader loader = new FXMLLoader(fxmlResource);
         Parent root = loader.load();
         
         Scene scene = new Scene(root, 800, 600);
