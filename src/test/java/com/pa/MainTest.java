@@ -1,6 +1,9 @@
 package com.pa;
 
 import org.junit.jupiter.api.Test;
+
+import com.pa.controllers.MainController;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
