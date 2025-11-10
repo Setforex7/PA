@@ -1,0 +1,37 @@
+name: Show Commit Details
+ 
+on:
+
+  push:
+
+    branches:
+
+      - main
+
+  pull_request:
+
+    branches:
+
+      - main
+ 
+jobs:
+
+  show-commits:
+
+    runs-on: ubuntu-latest
+ 
+    steps:
+
+      - name: Fazer checkout do repositório
+
+        uses: actions/checkout@v4
+ 
+      - name: Mostrar detalhes dos últimos commits
+
+        run: |
+
+          echo "Últimos commits:"
+
+          git log -5 --pretty=format:"%h | %an | %ar | %s"
+
+ 
